@@ -1,0 +1,15 @@
+root = true
+
+# Defaults: use tabs for indentation; do not lock tab width so developers can choose their preferred display
+[*]
+indent_style = tab
+# tab_width is intentionally not set to let each developer's editor preference take effect
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown: commonly uses spaces, and trailing spaces can be meaningful
+[*.md]
+indent_style = space
+trim_trailing_whitespace = false
