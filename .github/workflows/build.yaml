@@ -1,0 +1,23 @@
+name: Build
+
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-java@v4
+              with:
+                  distribution: temurin
+                  java-version: 21
+                  cache: maven
+            - name: Check formatting
+              run: ./mvnw spotless:check
+              working-directory: java-example-01
+            - name: Compile
+              run: ./mvnw compile -Dspotless.check.skip
+              working-directory: java-example-01
+            - name: Run tests
+              run: ./mvnw test -Dspotless.check.skip
+              working-directory: java-example-01
