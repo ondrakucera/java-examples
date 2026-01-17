@@ -145,6 +145,22 @@
 							<trimTrailingWhitespace />
 							<endWithNewline />
 						</format>
+						<format>
+							<includes>
+								<include>**/*.yaml</include>
+								<include>**/*.yml</include>
+							</includes>
+							<excludes>
+								<exclude>target/**</exclude>
+							</excludes>
+							<prettier>
+								<config>
+									<tabWidth>4</tabWidth>
+								</config>
+							</prettier>
+							<trimTrailingWhitespace />
+							<endWithNewline />
+						</format>
 					</formats>
 				</configuration>
 				<executions>
