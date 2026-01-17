@@ -31,3 +31,10 @@ jobs:
                   name: Tests
                   path: java-example-01/target/surefire-reports/*.xml
                   reporter: java-junit
+            - name: Publish coverage report
+              uses: PavanMudigonda/jacoco-reporter@v5.0
+              with:
+                  coverage_results_path: java-example-01/target/site/jacoco/jacoco.xml
+                  coverage_report_name: Coverage
+                  coverage_report_title: JaCoCo Coverage
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
