@@ -21,3 +21,10 @@ jobs:
             - name: Run tests
               run: ./mvnw test -Dspotless.check.skip
               working-directory: java-example-01
+            - name: Publish test results
+              uses: dorny/test-reporter@b082adf0eced0765477756c2a610396589b8c637 # v2.5.0
+              if: always()
+              with:
+                  name: Tests
+                  path: java-example-01/target/surefire-reports/*.xml
+                  reporter: java-junit
